@@ -28,6 +28,10 @@ correct_answers_index = [1, 2, 0, 3, 1]
 import sys
 #if ((user_answer.isdigit()) and (user_answer >= 0 and user_answer <3)):
 
+#Inicializo la variable para ir contando el puntaje
+score = 0.0
+
+
 # El usuario deberá contestar 3 preguntas
 for _ in range(3):
 # Se selecciona una pregunta aleatoria
@@ -47,7 +51,10 @@ for _ in range(3):
          if user_answer == correct_answers_index[question_index]:
 # Se verifica si la respuesta es correcta 
              print("¡Correcto!")
+             score = score + 1.0
              break
+         elif (score != 0):
+             score = score - 0.5
     else:
 # Si el usuario no responde correctamente después de 2 intentos,
 # se muestra la respuesta correcta
@@ -57,9 +64,10 @@ for _ in range(3):
 # Se imprime un blanco al final de la pregunta
 print()
 
-#El juego tiene un bug. Si el usuario ingresa un número de respuesta no
-#válido por ejemplo 42 o "huevos con spam" el programa falla con un
-#error. Modifica el mismo para que si la respuesta no es un número o
-#bien no está en el rango de las respuestas posibles muestre un mensaje
-#diciendo: "Respuesta no válida" y termine de inmediato con exit status
-#igual a 1.
+# Se imprime el puntaje del jugador
+print (f'El puntaje del jugador es: {score}')
+
+
+#Modifique el juego para que al final de la partida se muestre el puntaje
+#del jugador o jugadora. El puntaje se calcula de la siguiente forma, cada
+#intento fallido descuenta 0.5 puntos y cada acierto suma 1 punto.
