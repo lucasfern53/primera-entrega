@@ -32,9 +32,10 @@ import sys
 score = 0.0
 
 #inicializo la varable questions_to_ask para convertirla en una tupla de listas
-#cambiamos el random.choice por el random.sample para que no se repita ninguna pregunta
-questions_to_ask = random.sample(list(zip(questions,answers, correct_answers_index)), k=3)
+#cambiamos el random.choice por el random.sample para que no se repita ninguna pregunta)
 
+questions_to_ask = random.sample(list(zip(questions,answers, correct_answers_index)), k=3)
+ 
 # El usuario deberá contestar 3 preguntas. Hago un for en el que se desempaqueten en las siguientes 3 variables la informacion
 #que se necesita por medio de la tupla de listas
 
